@@ -1,0 +1,22 @@
+[bootstrap]
+main_collection = /scenes/loader/Loader.collectionc
+render = /rendercam/rendercam.renderc
+
+[script]
+shared_state = 1
+
+[display]
+width = 256
+height = 224
+
+[android]
+input_method = HiddenInputField
+
+[project]
+title = Revenge Of The Future
+dependencies = https://github.com/rgrams/rendercam/archive/v1.0.1.zip
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
+

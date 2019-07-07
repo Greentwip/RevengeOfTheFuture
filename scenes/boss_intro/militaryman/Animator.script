@@ -1,0 +1,221 @@
+local parallax_delay = 1
+local shadow_delay = 1.5
+local shadow_wait_time = 0
+
+local Game = require("shared_data.module")
+
+function init(self)
+	self.spawned_objects = {}
+	self.fade_timer = 60 * 10
+	self.counter = 0
+
+	parallax_a_move_to_middle(self)
+	parallax_b_move_to_bottom(self)
+	shadow_move_to_middle(self)
+
+	msg.post("/Sound#BGM","play_sound")
+	
+end
+
+function final(self)
+	for _, object_id in pairs(self.spawned_objects) do
+		go.delete(object_id)
+	end
+end
+
+function parallax_a_move_to_middle(self)
+
+	local parallax_a_position = go.get_position("/ParallaxA")
+
+	parallax_a_position.y = 112
+
+	go.set_position(parallax_a_position, "/ParallaxA")
+
+	go.animate("/ParallaxA",
+				"position.y", 
+				go.PLAYBACK_ONCE_FORWARD, 
+				parallax_a_position.y + 224, 
+				go.EASING_LINEAR, 
+				parallax_delay, 
+				0, 
+				parallax_a_move_to_bottom)
+				
+end
+
+function parallax_a_move_to_bottom(self)
+
+	local parallax_a_position = go.get_position("/ParallaxA")
+
+	parallax_a_position.y = -112
+
+	go.set_position(parallax_a_position, "/ParallaxA")
+
+	go.animate("/ParallaxA",
+				"position.y", 
+				go.PLAYBACK_ONCE_FORWARD, 
+				parallax_a_position.y + 224, 
+				go.EASING_LINEAR, 
+				parallax_delay, 
+				0, 
+				parallax_a_move_to_middle)
+				
+end
+
+function parallax_b_move_to_middle(self)
+
+	local parallax_b_position = go.get_position("/ParallaxB")
+
+	parallax_b_position.y = 112
+
+	go.set_position(parallax_b_position, "/ParallaxB")
+
+	go.animate("/ParallaxB",
+				"position.y", 
+				go.PLAYBACK_ONCE_FORWARD, 
+				parallax_b_position.y + 224, 
+				go.EASING_LINEAR, 
+				parallax_delay, 
+				0, 
+				parallax_b_move_to_bottom)
+				
+end
+
+function parallax_b_move_to_bottom(self)
+
+	local parallax_b_position = go.get_position("/ParallaxB")
+
+	parallax_b_position.y = -112
+
+	go.set_position(parallax_b_position, "/ParallaxB")
+
+	go.animate("/ParallaxB",
+				"position.y", 
+				go.PLAYBACK_ONCE_FORWARD, 
+				parallax_b_position.y + 224, 
+				go.EASING_LINEAR, 
+				parallax_delay, 
+				0, 
+				parallax_b_move_to_middle)
+				
+end
+
+
+function shadow_move_to_middle(self)
+
+	local shadow_position = go.get_position("/Shadow")
+
+	shadow_position.x = 338
+
+	go.set_position(shadow_position, "/Shadow")
+
+	go.animate("/Shadow",
+				"position.x", 
+				go.PLAYBACK_ONCE_FORWARD, 
+				128, 
+				go.EASING_LINEAR, 
+				shadow_delay, 
+				shadow_wait_time,
+				belt_secure)
+				
+end
+
+function belt_secure(self)
+
+	belt_left_move_to_middle(self)
+	belt_right_move_to_middle(self)
+	
+end
+
+function belt_left_move_to_middle(self)
+	local belt_position = go.get_position("/BeltLeft")
+
+	belt_position.x = -72
+
+	go.set_position(belt_position, "/BeltLeft")
+
+	go.animate("/BeltLeft",
+				"position.x", 
+				go.PLAYBACK_ONCE_FORWARD, 
+				70, 
+				go.EASING_LINEAR, 
+				1, 
+				0)
+end
+
+function belt_right_move_to_middle(self)
+
+	local belt_position = go.get_position("/BeltRight")
+
+	belt_position.x = 330
+
+	go.set_position(belt_position, "/BeltRight")
+
+	go.animate("/BeltRight",
+				"position.x", 
+				go.PLAYBACK_ONCE_FORWARD, 
+				183, 
+				go.EASING_LINEAR, 
+				1, 
+				0,
+				boss_animate)
+				
+end
+
+function boss_animate(self)
+	msg.post("/Animation#Sprite","play_animation", {id = hash("MilitaryMan")})
+end
+
+function enter_level(self)
+	msg.post("Loader:/GameObject#Loader", "load", { loadTarget = "MilitaryMan" })
+end
+
+
+function update(self, dt)
+	self.counter = self.counter + 1
+
+	if self.counter == self.fade_timer then
+		self.counter = self.fade_timer
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("animation_done") then
+
+		if sender.path == hash("/Animation") then
+			local p = go.get_position()
+
+			p.x = 128
+			p.y = 90
+			p.z = 0.5
+			
+			local component = "/Text#Factory"
+
+			Game.BossIntroText = "Military Man"
+			
+			local id = factory.create(component, p)
+			table.insert(self.spawned_objects, id) 
+
+			go.animate("/BeltRight",
+						"position.x", 
+						go.PLAYBACK_ONCE_FORWARD, 
+						183, 
+						go.EASING_LINEAR, 
+						1, 
+						3,
+						enter_level)
+			
+		end
+		
+	end 
+
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

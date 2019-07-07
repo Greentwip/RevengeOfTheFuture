@@ -1,0 +1,43 @@
+animations {
+  id: "MilitaryMan"
+  images {
+    image: "/content/boss_intro/shadow/militaryman_shadow_00.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "VineMan"
+  images {
+    image: "/content/boss_intro/shadow/vineman_shadow_00.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "SheriffMan"
+  images {
+    image: "/content/boss_intro/shadow/sheriffman_shadow_00.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "NightMan"
+  images {
+    image: "/content/boss_intro/shadow/nightman_shadow_00.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

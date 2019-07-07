@@ -1,0 +1,40 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+
+	self.wait_time_for_animation = 60 * 2
+	self.wait_time_for_fadeout = 60 * 4
+	self.counter = 0
+
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function update(self, dt)
+
+	self.counter = self.counter + 1
+	
+	if self.counter == self.wait_time_for_animation then
+		msg.post("#OpeningSound","play_sound")
+		msg.post("#DisclaimerSprite","play_animation", {id = hash("DisclaimerLoop")})
+	end
+
+	if self.counter == self.wait_time_for_fadeout then
+		msg.post("Loader:/GameObject#Loader", "load", { loadTarget = "Title" })
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

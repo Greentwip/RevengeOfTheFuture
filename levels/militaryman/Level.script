@@ -1,0 +1,142 @@
+local start, playing, options = 0, 1, 2
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.wait_time_for_ready = 60 * 2
+	self.counter = 0
+	self.ready = false
+
+	self.state = start
+
+	go.animate("/StartLabel#Text", "color.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_OUTSINE, 0)
+	go.animate("/StartLabel#Text", "outline.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_OUTSINE, 0)
+	
+
+	--msg.post("/Sound#BGM","play_sound")
+
+	self.is_ready_finished = false
+	self.ready_loops = 2
+	self.ready_loop_counter = 0
+
+	self.ready_tint_counter = 0
+
+	self.is_teleport_falling = false
+
+	self.spawned_objects = {}	
+
+	self.teleporter_id = nil
+	self.player_id = nil
+
+	self.player_ready = false
+	
+	setup(self)
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function setup(self)
+	local teleporter_position = go.get_position("/Teleporter")
+
+	local component = "/Teleporter#Factory"
+
+	self.teleporter_id = factory.create(component, teleporter_position)
+end
+
+
+function update(self, dt)
+
+	if self.ready == false then
+		self.counter = self.counter + 1
+	end
+
+	if self.counter == self.wait_time_for_ready then
+		self.ready = true
+	end
+
+	if self.ready == true then
+		if self.state == start then
+			if self.is_ready_finished then
+				if self.is_teleport_falling then
+					local pos = go.get_position(self.teleporter_id)
+					pos.y = pos.y - 4
+					go.set_position(pos, self.teleporter_id)
+				else
+					if self.launched_teleport then
+						if self.is_teleport_falling then
+							-- TODO
+						else
+							self.is_teleport_falling = true
+						end
+						
+					else
+						self.launched_teleport = true
+					end
+				end
+				
+			else
+				if self.ready_loop_counter == self.ready_loops then
+					self.is_ready_finished = true
+				else
+
+					if self.ready_tint_counter == 0 then
+						go.animate("/StartLabel#Text", "color.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_OUTSINE, 0)
+						go.animate("/StartLabel#Text", "outline.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_OUTSINE, 0)
+						self.ready_tint_counter = self.ready_tint_counter + 1						
+						
+					elseif self.ready_tint_counter == 60 then
+						go.animate("/StartLabel#Text", "color.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_OUTSINE, 0)
+						go.animate("/StartLabel#Text", "outline.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_OUTSINE, 0)
+						self.ready_tint_counter = self.ready_tint_counter + 1						
+									
+					elseif self.ready_tint_counter == 120 then
+						self.ready_loop_counter = self.ready_loop_counter + 1
+						self.ready_tint_counter = 0
+					else
+						self.ready_tint_counter = self.ready_tint_counter + 1						
+					end
+
+					
+					
+				end
+			end
+		end
+	end
+	
+
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("spawn_player") then
+
+		local p = message.position
+
+		local component = "/Player#Factory"
+
+		self.player_id = factory.create(component, p)
+
+		go.delete(self.teleporter_id)
+
+		self.teleporter_id = nil
+
+		self.is_teleport_falling = false
+
+		self.player_ready = true
+		
+	elseif message_id == hash("spawn_enemy") then
+
+	end 
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("click") and action.pressed then
+		msg.post("@system:", "toggle_physics_debug") 
+		print("message")
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

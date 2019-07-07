@@ -1,0 +1,16 @@
+animations {
+  id: "Loop"
+  images {
+    image: "/content/stage_select/square_small_00.png"
+  }
+  images {
+    image: "/content/stage_select/square_small_01.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

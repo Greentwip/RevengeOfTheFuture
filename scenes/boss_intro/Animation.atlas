@@ -1,0 +1,317 @@
+animations {
+  id: "MilitaryMan"
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_00.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_01.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_02.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_03.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_04.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_05.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_06.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_07.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_08.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_09.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_10.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_11.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_12.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_13.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_14.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_15.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_16.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_17.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_18.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_19.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_20.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_21.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_22.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "NightMan"
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_00.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_01.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_02.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_03.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_04.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_05.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_06.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_07.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_08.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_09.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_10.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_11.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_12.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_13.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_14.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_15.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_16.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_17.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_18.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_19.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_20.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_21.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/nightman/boss_animation_nightman_22.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "SheriffMan"
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_00.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_01.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_02.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_03.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_04.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_05.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_06.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_07.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_08.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_09.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_10.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_11.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_12.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_13.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_14.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_15.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_16.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_17.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_18.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_19.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_20.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_21.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/sheriffman/boss_animation_sheriffman_22.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "VineMan"
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_00.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_01.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_02.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_03.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_04.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_05.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_06.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_07.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_08.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_09.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_10.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_11.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_12.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_13.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_14.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_15.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_16.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_17.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_18.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_19.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_20.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_21.png"
+  }
+  images {
+    image: "/content/boss_intro/animation/vineman/boss_animation_vineman_22.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "Idle"
+  images {
+    image: "/content/boss_intro/animation/militaryman/boss_animation_militaryman_00.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

@@ -1,0 +1,59 @@
+local Game = require("shared_data.module")
+
+function init(self)
+	label.set_text("#Label", "")
+	self.counter = 0
+	self.index_counter = 0
+	self.step = 10
+	self.text = Game.BossIntroText
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+
+	self.counter = self.counter + 1
+
+	if self.counter == self.step then
+
+		if self.index_counter < self.text:len() then
+
+			self.index_counter = self.index_counter + 1
+
+		end
+
+		self.counter = 0
+	end
+
+	if self.index_counter > 0 then
+		local final_string = ""
+		for i = 1, self.index_counter do
+			local c = self.text:sub(i,i)
+
+			final_string = final_string .. c
+
+		end
+
+		label.set_text("#Label", final_string)
+		
+	end
+	
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

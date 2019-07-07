@@ -1,0 +1,60 @@
+local Game = require("shared_data.module")
+
+local function load_disclaimer(self)
+	msg.post("#", "load", { loadTarget = "Disclaimer" })
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	load_disclaimer(self)
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+local function unload_target(self)
+	msg.post("#"..Game.UnloadTarget.."Proxy", "disable")
+	msg.post("#"..Game.UnloadTarget.."Proxy", "final")
+	msg.post("#"..Game.UnloadTarget.."Proxy", "unload")
+end
+
+local function load_target(self)
+	if Game.UnloadTarget == "" then
+		Game.UnloadTarget = Game.LoadTarget
+	else
+		unload_target(self)
+		Game.UnloadTarget = Game.LoadTarget
+	end
+	msg.post("#"..Game.LoadTarget.."Proxy", "load")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("load") then
+
+		Game.LoadTarget = message.loadTarget
+		
+		go.animate("#Background", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_LINEAR, 2, 0, load_target)
+		
+	elseif message_id == hash("proxy_loaded") then
+
+		msg.post(sender, "enable")
+		go.animate("#Background", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 2)
+
+	end 
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

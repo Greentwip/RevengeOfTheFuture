@@ -1,0 +1,68 @@
+animations {
+  id: "DisclaimerLoop"
+  images {
+    image: "/content/opening/greentwip_logo_00.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_01.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_02.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_03.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_04.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_05.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_06.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_07.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_08.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_09.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_10.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_11.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_12.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_13.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_14.png"
+  }
+  images {
+    image: "/content/opening/greentwip_logo_15.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 15
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "DisclaimerIdle"
+  images {
+    image: "/content/opening/greentwip_logo_00.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

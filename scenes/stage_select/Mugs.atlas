@@ -1,0 +1,53 @@
+animations {
+  id: "SheriffMan"
+  images {
+    image: "/content/stage_select/spr_stage_select_mugs_01.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "VineMan"
+  images {
+    image: "/content/stage_select/spr_stage_select_mugs_04.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "MilitaryMan"
+  images {
+    image: "/content/stage_select/spr_stage_select_mugs_03.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "NightMan"
+  images {
+    image: "/content/stage_select/spr_stage_select_mugs_06.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "MegaMan"
+  images {
+    image: "/content/stage_select/spr_stage_select_mugs_08.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0
